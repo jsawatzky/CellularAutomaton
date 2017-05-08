@@ -202,11 +202,7 @@ public class Game extends Graphics {
             default:
 
                 Scanner in = null;
-                try {
-                    in = new Scanner(new File("res/" + layout.toString() + ".txt"));
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
+                in = new Scanner(Game.class.getClassLoader().getResourceAsStream(layout.toString() + ".txt"));
 
                 int xSize = in.nextInt();
                 int ySize = in.nextInt();
